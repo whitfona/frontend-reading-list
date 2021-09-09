@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Front End Reading List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Keep track of your favourite books you've read and the books you want to read next. Frontend application using React and Typescript
 
 ## Available Scripts
 
