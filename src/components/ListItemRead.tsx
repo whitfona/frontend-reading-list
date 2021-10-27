@@ -3,16 +3,18 @@ import closedBin from '../images/closed-bin.png';
 import openBin from '../images/open-bin.png';
 import closedPen from '../images/pen.png';
 import openPen from '../images/pen-and-paper.png';
+import { RatingView } from 'react-simple-star-rating';
 
 interface Props {
-  book: { id: number, title: string, author: string };
+  book: { id: number, title: string, author: string, rating: number };
   removeBook: (bookID: number) => void;
   editBook: (bookID: number) => void;
 }
 
-export const ListItem: React.FC<Props> = ({ book, removeBook, editBook }) => {
+export const ListItemRead: React.FC<Props> = ({ book, removeBook, editBook }) => {
   return (
     <tr key={book.id}>
+      <td>{book.rating}<RatingView ratingValue={1} stars={1} fillColor="#0000FF" /></td>
       <td>{book.title}</td>
       <td>{book.author}</td>
       <td onClick={() => editBook(book.id)}>

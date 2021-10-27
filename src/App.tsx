@@ -10,18 +10,19 @@ function App() {
     id: number;
     title: string;
     author: string;
+    rating: number;
     isRead: boolean;
   }
 
   const [books, setBooks] = useState<Books[]>([
-    { id: 1, title: 'Into Thin Air', author: 'Jon Krakauer', isRead: true },
-    { id: 2, title: 'A Gentleman in Moscow', author: 'Amor Towles', isRead: true },
-    { id: 3, title: 'The Hitchhikers Guide to the Galaxy', author: 'Douglas Adams', isRead: true },
-    { id: 4, title: 'Running To The Edge', author: 'Matthew Futterman', isRead: true },
-    { id: 5, title: 'Just Mercy', author: 'Bryan Stevenson', isRead: true },
-    { id: 6, title: 'Where Men Win Glory', author: 'Jon Krakauer', isRead: false },
-    { id: 7, title: 'Dune', author: 'Frank Herbret', isRead: false },
-    { id: 8, title: 'The Fifth Risk', author: 'Michael Lewis', isRead: false }
+    { id: 1, title: 'Into Thin Air', author: 'Jon Krakauer', rating: 5, isRead: true },
+    { id: 2, title: 'A Gentleman in Moscow', author: 'Amor Towles', rating: 5, isRead: true },
+    { id: 3, title: 'The Hitchhikers Guide to the Galaxy', author: 'Douglas Adams', rating: 4, isRead: true },
+    { id: 4, title: 'Running To The Edge', author: 'Matthew Futterman', rating: 4, isRead: true },
+    { id: 5, title: 'Just Mercy', author: 'Bryan Stevenson', rating: 5, isRead: true },
+    { id: 6, title: 'Where Men Win Glory', author: 'Jon Krakauer', rating: 4, isRead: false },
+    { id: 7, title: 'Dune', author: 'Frank Herbret', rating: 1, isRead: false },
+    { id: 8, title: 'The Fifth Risk', author: 'Michael Lewis', rating: 1, isRead: false }
   ])
 
   const [title, setTitle] = useState<string>('');
@@ -33,8 +34,8 @@ function App() {
     setBooks(books.filter((book) => book.id !== index));
   }
 
-  const addBook = (id: number, title: string, author: string, isRead: boolean): void => {
-    let newBook = { id, title, author, isRead }
+  const addBook = (id: number, title: string, author: string, rating: number, isRead: boolean): void => {
+    let newBook = { id, title, author, rating, isRead }
 
     setBooks([...books, newBook]);
     setTitle('');
@@ -52,8 +53,8 @@ function App() {
     }))
   }
 
-  const updateBook = (id: number, title: string, author: string, isRead: boolean): void => {
-    addBook(id, title, author, isRead)
+  const updateBook = (id: number, title: string, author: string, rating: number, isRead: boolean): void => {
+    addBook(id, title, author, rating, isRead)
     setEdit(false);
   }
 

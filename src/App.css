@@ -187,10 +187,17 @@ table td {
 }
 
 table td:first-child {
-  width: 181px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }
 
 table td:nth-child(2) {
+  width: 181px;
+}
+
+table td:nth-child(3) {
   width: 107px;
 }
 
